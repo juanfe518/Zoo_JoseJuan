@@ -1,6 +1,4 @@
-using System;
-
-namespace Zoo.Models
+namespace Zoo.DTO
 {
     public class Especies
     {

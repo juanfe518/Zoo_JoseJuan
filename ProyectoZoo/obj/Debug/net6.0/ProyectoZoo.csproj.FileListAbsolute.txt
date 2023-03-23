@@ -25,3 +25,5 @@ D:\Universidad\Octavo\LineaDeEnfasis2\ProyectoUniversidad\SlnZoo_JoseJuan\Proyec
 D:\Universidad\Octavo\LineaDeEnfasis2\ProyectoUniversidad\SlnZoo_JoseJuan\ProyectoZoo\obj\Debug\net6.0\ProyectoZoo.pdb
 D:\Universidad\Octavo\LineaDeEnfasis2\ProyectoUniversidad\SlnZoo_JoseJuan\ProyectoZoo\obj\Debug\net6.0\ProyectoZoo.genruntimeconfig.cache
 D:\Universidad\Octavo\LineaDeEnfasis2\ProyectoUniversidad\SlnZoo_JoseJuan\ProyectoZoo\obj\Debug\net6.0\ref\ProyectoZoo.dll
+D:\Universidad\Octavo\LineaDeEnfasis2\ProyectoUniversidad\SlnZoo_JoseJuan\ProyectoZoo\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\Universidad\Octavo\LineaDeEnfasis2\ProyectoUniversidad\SlnZoo_JoseJuan\ProyectoZoo\bin\Debug\net6.0\Npgsql.dll
