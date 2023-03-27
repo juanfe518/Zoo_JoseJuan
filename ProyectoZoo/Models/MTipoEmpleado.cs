@@ -10,7 +10,7 @@ namespace Zoo.Models
 
         public RespuestaDTO AddTipoEmpleado(TipoEmpleado tipoEmpleado)
         {
-            String queryInsert = "INSERT INTO public.Tipo_Empleado(Nombre_Tipo) VALUES ('" + tipoEmpleado.Nombre_Tipo + "') returning id_Tipo_Empleado;";
+            String queryInsert = "INSERT INTO public.\"Tipo_Empleado\"(\"Nombre_Tipo\") VALUES ('" + tipoEmpleado.Nombre_Tipo + "') returning \"id_Tipo_Empleado\";";
             MData data = new MData();     
             RespuestaDTO responseBD = data.execute(queryInsert);  
             JArray array = JArray.Parse(responseBD.data);
