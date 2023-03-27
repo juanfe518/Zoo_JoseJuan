@@ -1,9 +1,12 @@
+using System.ComponentModel.DataAnnotations;
 namespace Zoo.DTO
 {
     public class TipoEmpleado
     {
         public string? Id_Tipo_Empleado { get; set;}
-        public string Nombre_Tipo { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "El campo nombre es obligatorio")]
+        public string Nombre_Tipo { get; set; }
 
         public TipoEmpleado(string? Id_Tipo_Empleado, string Nombre_Tipo)
         {

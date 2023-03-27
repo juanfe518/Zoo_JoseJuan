@@ -10,12 +10,12 @@ namespace Zoo.Models
 
         public RespuestaDTO AddTipoEmpleado(TipoEmpleado tipoEmpleado)
         {
-            string queryInsert = "INSERT INTO public.Tipo_Empleado(Nombre_Tipo) VALUES ('" + tipoEmpleado.Nombre_Tipo + "') returning id_Tipo_Empleado;";
-            MData mData = new MData();
-            RespuestaDTO respuestaBD = mData.execute(queryInsert);
-            JArray array = JArray.Parse(respuestaBD.data);
-            JObject perso = JObject.Parse(Convert.ToString(array[0]));
-            tipoEmpleado.Id_Tipo_Empleado = Convert.ToString(perso["id_Tipo_Empleado"]);
+            String queryInsert = "INSERT INTO public.Tipo_Empleado(Nombre_Tipo) VALUES ('" + tipoEmpleado.Nombre_Tipo + "') returning id_Tipo_Empleado;";
+            MData data = new MData();     
+            RespuestaDTO responseBD = data.execute(queryInsert);  
+            JArray array = JArray.Parse(responseBD.data);
+            JObject dep = JObject.Parse(Convert.ToString(array[0]));
+            tipoEmpleado.Id_Tipo_Empleado = Convert.ToString(dep["id_Tipo_Empleado"]);
 
             return new RespuestaDTO(true, JsonConvert.SerializeObject(tipoEmpleado), "");
         }

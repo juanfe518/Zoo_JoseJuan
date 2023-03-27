@@ -15,20 +15,22 @@ namespace Zoo.Models
 
             try 
             {
-                //Crea la conexión
-                NpgsqlConnection conex = new NpgsqlConnection("Server = localhost:5432; User Id = postgres; Password = password; Database = Zoo_Jose_Cano");
-                conex.Open();
+                // Creacion de la conexion
+                NpgsqlConnection conn = new NpgsqlConnection("Server = localhost:5432; User Id = postgres; Password = password; Database = Zoo_Jose_Cano");
+                conn.Open();
 
-                //Definir el query
-                NpgsqlCommand query = new NpgsqlCommand(command, conex);
+                // Definimos el query
+                NpgsqlCommand query = new NpgsqlCommand(command, conn);
 
-                // Ejecutar la query
+                // Ejecutar query
                 NpgsqlDataReader dr = query.ExecuteReader();
 
                 var dataTable = new DataTable();
                 dataTable.Load(dr);
 
                 respuesta.data = JsonConvert.SerializeObject(dataTable);
+
+
 
                 return respuesta;
             }
