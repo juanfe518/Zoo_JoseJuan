@@ -6,6 +6,8 @@ namespace Zoo.DTO
         public string data { get; set; }
         public string error { get; set; }
 
+        
+
         public RespuestaDTO(bool respuesta, string data, string error)
         {
             this.respuesta = respuesta;

@@ -14,8 +14,8 @@ namespace Zoo.Models
             MData data = new MData();     
             RespuestaDTO responseBD = data.execute(queryInsert);  
             JArray array = JArray.Parse(responseBD.data);
-            JObject dep = JObject.Parse(Convert.ToString(array[0]));
-            tipoEmpleado.Id_Tipo_Empleado = Convert.ToString(dep["id_Tipo_Empleado"]);
+            JObject tipo = JObject.Parse(Convert.ToString(array[0]));
+            tipoEmpleado.Id_Tipo_Empleado = Convert.ToString(tipo["id_Tipo_Empleado"]);
 
             return new RespuestaDTO(true, JsonConvert.SerializeObject(tipoEmpleado), "");
         }

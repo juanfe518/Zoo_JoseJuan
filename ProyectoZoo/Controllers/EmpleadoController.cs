@@ -18,6 +18,47 @@ namespace Zoo.Controllers
             return Ok(mTipoEmpleado.AddTipoEmpleado(tipoEmpleado));
         }
 
+
+        [HttpPost("addempleado")]
+        public async Task<IActionResult> AddEmpleado(Empleados empleado)
+        {
+            MEmpleado mEmpleado = new MEmpleado();
+            return Ok(mEmpleado.AddEmpleado(empleado));
+        }
+
+        [HttpPost("addespecie")]
+        public async Task<IActionResult> AddEspecie(Especies especie)
+        {
+            MEspecie mEspecie = new MEspecie();
+            return Ok(mEspecie.AddEspecie(especie));
+        }
+
+        [HttpPost("additinerario")]
+        public async Task<IActionResult> AddItinerario(Itinerario itinerario)
+        {
+            MItinerario mItinerario = new MItinerario();
+            return Ok(mItinerario.AddItinerario(itinerario));
+        }
+        [HttpPost("addzona")]
+        public async Task<IActionResult> AddZona(Zonas zona)
+        {
+            MZona mZona = new MZona();
+            return Ok(mZona.AddZona(zona));
+        }
+
+        [HttpPost("addtipovegetacion")]
+        public async Task<IActionResult> Addtipovegetacion(TiposVegetacion tipoVegetacion)
+        {
+            MTipoVegetacion mTipoVegetacion = new MTipoVegetacion();
+            return Ok(mTipoVegetacion.AddTipoVegetacion(tipoVegetacion));
+        }
+
+        [HttpPost("addhabitat")]
+        public async Task<IActionResult> Addhabitat(Habitats habitat)
+        {
+            MHabitats mHabitat = new MHabitats();
+            return Ok(mHabitat.AddHabitat(habitat));
+        }
         // [HttpGet("getempleados")]
         // public async Task<IActionResult> GetEmpleado()
         // {

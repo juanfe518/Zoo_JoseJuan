@@ -8,6 +8,11 @@ namespace Zoo.DTO
         [Required(ErrorMessage = "El campo nombre es obligatorio")]
         public string Nombre_Tipo { get; set; }
 
+        public TipoEmpleado()
+        {
+            
+        }
+
         public TipoEmpleado(string? Id_Tipo_Empleado, string Nombre_Tipo)
         {
             this.Id_Tipo_Empleado = Id_Tipo_Empleado;

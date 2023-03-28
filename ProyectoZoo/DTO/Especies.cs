@@ -2,17 +2,23 @@ namespace Zoo.DTO
 {
     public class Especies
     {
+        public string? id_Especie { get; set; }
         public string nombre_espanol { get; set; } = string.Empty;
         public string nombre_cientifico { get; set; } = string.Empty;
         public string descripcion { get; set; } = string.Empty;
-        public Zonas zona { get; set; }
-        
-        public Especies(string nombre_espanol, string nombre_cientifico, string descripcion, Zonas zona)
+        public int id_zona { get; set; }
+        public Especies()
         {
+            
+        }
+        
+        public Especies(string? id_Especie, string nombre_espanol, string nombre_cientifico, string descripcion, int id_zona)
+        {
+            this.id_Especie = id_Especie;
             this.nombre_espanol = nombre_espanol;
             this.nombre_cientifico = nombre_cientifico;
             this.descripcion = descripcion;
-            this.zona = zona;
+            this.id_zona = id_zona;
         }
     }
 }
