@@ -26,6 +26,12 @@ namespace Zoo.Controllers
             return Ok(mEmpleado.AddEmpleado(empleado));
         }
 
+        [HttpGet("getempleados")]
+        public async Task<IActionResult> GetEmpleados() {
+            MEmpleado mEmpleado = new MEmpleado();
+            return Ok(mEmpleado.GetEmpleados());
+        }
+
         [HttpPost("addespecie")]
         public async Task<IActionResult> AddEspecie(Especies especie)
         {

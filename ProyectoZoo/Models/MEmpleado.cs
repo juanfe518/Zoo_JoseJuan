@@ -19,5 +19,13 @@ namespace Zoo.Models
 
             return new RespuestaDTO(true, JsonConvert.SerializeObject(empleado), "");
         }
+
+        public RespuestaDTO GetEmpleados() {
+            String queryGet = "SELECT * FROM public.\"Empleado\";";
+            MData data = new MData();
+            RespuestaDTO responseBD = data.execute(queryGet);
+            return responseBD;
+
+        } 
     }
 }
