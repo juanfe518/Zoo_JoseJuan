@@ -2,7 +2,7 @@ namespace Zoo.DTO
 {
     public class Empleados
     {
-        public string? id { get; set; }
+        public int? id { get; set; }
         public string nombre { get; set; }
         public string direccion { get; set; }
         public string telefonto { get; set; }
@@ -15,7 +15,7 @@ namespace Zoo.DTO
             
         }
         
-        public Empleados(string? id, string nombre, string direccion, string telefonto, /*DateTime fecha_ingreso,*/ int Id_Tipo_Empleado)
+        public Empleados(int? id, string nombre, string direccion, string telefonto, /*DateTime fecha_ingreso,*/ int Id_Tipo_Empleado)
         {
             this.id = id;
             this.nombre = nombre;

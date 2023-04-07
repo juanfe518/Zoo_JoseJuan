@@ -32,6 +32,25 @@ namespace Zoo.Controllers
             return Ok(mEmpleado.GetEmpleados());
         }
 
+        [HttpGet("getempleado/{id}")]
+        public async Task<IActionResult> GetEmpelado(string id) {
+            MEmpleado mEmpleado = new MEmpleado();
+            return Ok(mEmpleado.GetEmpleado(id));
+        }
+
+        [HttpPatch("updateempleado")]
+        public async Task<IActionResult> UpdateEmpleado(Empleados empleado) {
+            MEmpleado mEmpleado = new MEmpleado();
+            return Ok(mEmpleado.UpdateEmpleado(empleado));
+        }
+
+        [HttpDelete("deleteempleado/{id}")]
+        public async Task<IActionResult> DeleteEmpleado(int id) {
+            MEmpleado mEmpleado = new MEmpleado();
+            return Ok(mEmpleado.DeleteEmpleado(id));
+        }
+
+
         [HttpPost("addespecie")]
         public async Task<IActionResult> AddEspecie(Especies especie)
         {
