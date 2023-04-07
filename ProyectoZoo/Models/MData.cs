@@ -16,7 +16,8 @@ namespace Zoo.Models
             try 
             {
                 // Creacion de la conexion
-                NpgsqlConnection conn = new NpgsqlConnection("Server = localhost:5432; User Id = postgres; Password = password; Database = Zoo_Jose_Cano");
+                NpgsqlConnection conn = new NpgsqlConnection("Server = 209.50.55.238:97; User Id = postgres; Password = 5492bbf20; Database = Zoo_Jose_Cano");
+                //NpgsqlConnection conn = new NpgsqlConnection("Server = localhost:5432; User Id = postgres; Password = password; Database = Zoo_Jose_Cano");
                 conn.Open();
 
                 // Definimos el query
