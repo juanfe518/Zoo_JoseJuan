@@ -3,7 +3,7 @@ namespace Zoo.DTO
 {
     public class Itinerario
     {
-        public string? _id_Itinerario { get; set;}
+        public int? _id_Itinerario { get; set;}
 
         [Required(ErrorMessage = "El campo nombre es obligatorio")]
         public string _codigo { get; set; }
@@ -19,7 +19,7 @@ namespace Zoo.DTO
             
         }
 
-        public Itinerario(string? id_Itinerario, string codigo, string fecha_Hora_Inicio, string fecha__Hora_Fin, int longitud_Itinerario, int maximo_Nnumero_Visitantes, int id_Empleado)
+        public Itinerario(int? id_Itinerario, string codigo, string fecha_Hora_Inicio, string fecha__Hora_Fin, int longitud_Itinerario, int maximo_Nnumero_Visitantes, int id_Empleado)
         {
             this._id_Itinerario = id_Itinerario;
             this._codigo = codigo;

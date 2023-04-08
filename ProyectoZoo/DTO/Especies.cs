@@ -2,7 +2,7 @@ namespace Zoo.DTO
 {
     public class Especies
     {
-        public string? id_Especie { get; set; }
+        public int? id_Especie { get; set; }
         public string nombre_espanol { get; set; } = string.Empty;
         public string nombre_cientifico { get; set; } = string.Empty;
         public string descripcion { get; set; } = string.Empty;
@@ -12,7 +12,7 @@ namespace Zoo.DTO
             
         }
         
-        public Especies(string? id_Especie, string nombre_espanol, string nombre_cientifico, string descripcion, int id_zona)
+        public Especies(int? id_Especie, string nombre_espanol, string nombre_cientifico, string descripcion, int id_zona)
         {
             this.id_Especie = id_Especie;
             this.nombre_espanol = nombre_espanol;

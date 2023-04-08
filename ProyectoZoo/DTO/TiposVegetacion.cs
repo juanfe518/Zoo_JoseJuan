@@ -3,7 +3,7 @@ namespace Zoo.DTO
 {
     public class TiposVegetacion
     {
-        public string? _Id_Tipo_Vegetacion { get; set;}
+        public int? _Id_Tipo_Vegetacion { get; set;}
 
         [Required(ErrorMessage = "El campo nombre es obligatorio")]
         public string _Nombre_Vegetacion { get; set; }
@@ -14,7 +14,7 @@ namespace Zoo.DTO
             
         }
 
-        public TiposVegetacion(string? Id_Tipo_Vegetacion, string Nombre_Vegetacion, string Descripcion)
+        public TiposVegetacion(int? Id_Tipo_Vegetacion, string Nombre_Vegetacion, string Descripcion)
         {
             this._Id_Tipo_Vegetacion = Id_Tipo_Vegetacion;
             this._Nombre_Vegetacion = Nombre_Vegetacion;

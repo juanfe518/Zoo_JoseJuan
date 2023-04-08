@@ -15,7 +15,7 @@ namespace Zoo.Models
             RespuestaDTO responseBD = data.execute(queryInsert);  
             JArray array = JArray.Parse(responseBD.data);
             JObject itiner = JObject.Parse(Convert.ToString(array[0]));
-            itinerario._id_Itinerario = Convert.ToString(itiner["Id_Itinerario"]);
+            //itinerario._id_Itinerario = Convert.ToString(itiner["Id_Itinerario"]);
 
             return new RespuestaDTO(true, JsonConvert.SerializeObject(itinerario), "");
         }

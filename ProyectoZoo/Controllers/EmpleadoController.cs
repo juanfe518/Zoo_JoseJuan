@@ -11,6 +11,7 @@ namespace Zoo.Controllers
     {
         public EmpleadoController(){}
 
+        // Agregar tipo empleado
         [HttpPost("addtipoempleado")]
         public async Task<IActionResult> AddTipoEmpleado(TipoEmpleado tipoEmpleado)
         {
@@ -18,7 +19,9 @@ namespace Zoo.Controllers
             return Ok(mTipoEmpleado.AddTipoEmpleado(tipoEmpleado));
         }
 
+/* ======================================================================== // ================================================================= */
 
+        //Agregar empleado
         [HttpPost("addempleado")]
         public async Task<IActionResult> AddEmpleado(Empleados empleado)
         {
@@ -26,31 +29,62 @@ namespace Zoo.Controllers
             return Ok(mEmpleado.AddEmpleado(empleado));
         }
 
+        // Listar empleados
         [HttpGet("getempleados")]
         public async Task<IActionResult> GetEmpleados() {
             MEmpleado mEmpleado = new MEmpleado();
             return Ok(mEmpleado.GetEmpleados());
         }
 
+        // Listar un empleado
         [HttpGet("getempleado/{id}")]
         public async Task<IActionResult> GetEmpelado(string id) {
             MEmpleado mEmpleado = new MEmpleado();
             return Ok(mEmpleado.GetEmpleado(id));
         }
 
+        // Actualizar un empleado
         [HttpPatch("updateempleado")]
         public async Task<IActionResult> UpdateEmpleado(Empleados empleado) {
             MEmpleado mEmpleado = new MEmpleado();
             return Ok(mEmpleado.UpdateEmpleado(empleado));
         }
 
+        // Eliminar un empleado
         [HttpDelete("deleteempleado/{id}")]
         public async Task<IActionResult> DeleteEmpleado(int id) {
             MEmpleado mEmpleado = new MEmpleado();
             return Ok(mEmpleado.DeleteEmpleado(id));
         }
 
+/* ======================================================================== // ================================================================= */
 
+        // Asignarle una especie a un empleado
+        [HttpPost("asignarespecie")]
+        public async Task<IActionResult> AsiganrEspecie(AssignEspecies asiganrEspecie)
+        {
+            MAssignEspecies mAssignEspecies = new MAssignEspecies();
+            return Ok(mAssignEspecies.AssignEspecie(asiganrEspecie));
+        }
+
+        // Listar especies asignadas a empleados
+        [HttpGet("getespeciesempleados")]
+        public async Task<IActionResult> GetEspeciesEmpleados() {
+            MAssignEspecies mAssignEspecies = new MAssignEspecies();
+            return Ok(mAssignEspecies.GetEspeciesEmpleados());
+        }
+
+        // Listar una especie asignado a un empleado
+        [HttpGet("getespecieempleado/{id}")]
+        public async Task<IActionResult> GetEspecieEmpelado(string id) {
+            MAssignEspecies mAssignEspecies = new MAssignEspecies();
+            return Ok(mAssignEspecies.GetEspecieEmpleado(id));
+        }
+
+
+/* ======================================================================== // ================================================================= */
+
+        // Agregar especie
         [HttpPost("addespecie")]
         public async Task<IActionResult> AddEspecie(Especies especie)
         {
@@ -58,12 +92,46 @@ namespace Zoo.Controllers
             return Ok(mEspecie.AddEspecie(especie));
         }
 
+        // Listar especies
+        [HttpGet("getespecies")]
+        public async Task<IActionResult> GetEspecies() {
+            MEspecie mEspecie = new MEspecie();
+            return Ok(mEspecie.GetEspecies());
+        }
+
+        // Listar una especie
+        [HttpGet("getespecie/{id_Especie}")]
+        public async Task<IActionResult> GetEspecie(string id_Especie) {
+            MEspecie mEspecie = new MEspecie();
+            return Ok(mEspecie.GetEspecie(id_Especie));
+        }
+
+        // Actualizar especie
+        [HttpPatch("updateespecie")]
+        public async Task<IActionResult> UpdateEspecie(Especies especie) {
+            MEspecie mEspecie = new MEspecie();
+            return Ok(mEspecie.UpdateEspecie(especie));
+        }
+
+        // Eliminar especie
+        [HttpDelete("deleteespecie/{id_Especie}")]
+        public async Task<IActionResult> DeleteEspecie(int id_Especie) {
+            MEspecie mEspecie = new MEspecie();
+            return Ok(mEspecie.DeleteEspecie(id_Especie));
+        }
+
+/* ======================================================================== // ================================================================= */
+        // Agregar itinerario
         [HttpPost("additinerario")]
         public async Task<IActionResult> AddItinerario(Itinerario itinerario)
         {
             MItinerario mItinerario = new MItinerario();
             return Ok(mItinerario.AddItinerario(itinerario));
         }
+
+/* ======================================================================== // ================================================================= */
+
+        // Agregar Zona
         [HttpPost("addzona")]
         public async Task<IActionResult> AddZona(Zonas zona)
         {
@@ -71,6 +139,8 @@ namespace Zoo.Controllers
             return Ok(mZona.AddZona(zona));
         }
 
+/* ======================================================================== // ================================================================= */
+        // Agregar tipo vegetación
         [HttpPost("addtipovegetacion")]
         public async Task<IActionResult> Addtipovegetacion(TiposVegetacion tipoVegetacion)
         {
@@ -78,12 +148,19 @@ namespace Zoo.Controllers
             return Ok(mTipoVegetacion.AddTipoVegetacion(tipoVegetacion));
         }
 
+/* ======================================================================== // ================================================================= */
+        // Agregar habitat
         [HttpPost("addhabitat")]
         public async Task<IActionResult> Addhabitat(Habitats habitat)
         {
             MHabitats mHabitat = new MHabitats();
             return Ok(mHabitat.AddHabitat(habitat));
         }
+
+
+
+
+
         // [HttpGet("getempleados")]
         // public async Task<IActionResult> GetEmpleado()
         // {

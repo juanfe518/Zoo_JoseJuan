@@ -3,7 +3,7 @@ namespace Zoo.DTO
 {
     public class TipoEmpleado
     {
-        public string? Id_Tipo_Empleado { get; set;}
+        public int? Id_Tipo_Empleado { get; set;}
 
         [Required(ErrorMessage = "El campo nombre es obligatorio")]
         public string Nombre_Tipo { get; set; }
@@ -13,7 +13,7 @@ namespace Zoo.DTO
             
         }
 
-        public TipoEmpleado(string? Id_Tipo_Empleado, string Nombre_Tipo)
+        public TipoEmpleado(int? Id_Tipo_Empleado, string Nombre_Tipo)
         {
             this.Id_Tipo_Empleado = Id_Tipo_Empleado;
             this.Nombre_Tipo = Nombre_Tipo;

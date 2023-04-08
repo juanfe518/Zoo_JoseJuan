@@ -15,7 +15,7 @@ namespace Zoo.Models
             RespuestaDTO responseBD = data.execute(queryInsert);  
             JArray array = JArray.Parse(responseBD.data);
             JObject habit = JObject.Parse(Convert.ToString(array[0]));
-            habitat.id_Habitat = Convert.ToString(habit["id_Habitat"]);
+            //habitat.id_Habitat = Convert.ToString(habit["id_Habitat"]);
 
             return new RespuestaDTO(true, JsonConvert.SerializeObject(habitat), "");
         }
