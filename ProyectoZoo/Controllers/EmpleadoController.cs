@@ -45,7 +45,7 @@ namespace Zoo.Controllers
 
         // Listar un empleado
         [HttpGet("getempleado/{id}")]
-        public async Task<IActionResult> GetEmpelado(string id) {
+        public async Task<IActionResult> GetEmpelado(int id) {
             MEmpleado mEmpleado = new MEmpleado();
             return Ok(mEmpleado.GetEmpleado(id));
         }
@@ -142,12 +142,79 @@ namespace Zoo.Controllers
         }
 
 /* ======================================================================== // ================================================================= */
+       
+       // Asignarle una especie a un habitat
+        [HttpPost("asignarespeciehabtat")]
+        public async Task<IActionResult> AsiganrEspeciehabitat(AssignEspecieHabitat asiganrEspeciehabitat)
+        {
+            MAssignEspecieHabitat mAssignEspecieHabitat = new MAssignEspecieHabitat();
+            return Ok(mAssignEspecieHabitat.AssignEspecieHabitat(asiganrEspeciehabitat));
+        }
+
+        // Listar especies asignadas a un habitat
+        [HttpGet("getespecieshabitats")]
+        public async Task<IActionResult> GetEspeciesHabitats() {
+            MAssignEspecieHabitat mAssignEspecieHabitat = new MAssignEspecieHabitat();
+            return Ok(mAssignEspecieHabitat.GetEspeciesHabitats());
+        }
+
+        // Listar una especie asignado a un habitat
+        [HttpGet("getespeciehabitat/{id}")]
+        public async Task<IActionResult> GetEspecieHabitat(int id) {
+            MAssignEspecieHabitat mAssignEspecieHabitat = new MAssignEspecieHabitat();
+            return Ok(mAssignEspecieHabitat.GetEspecieHabitat(id));
+        }
+
+        // Editar una especie asignado a un habitat
+        [HttpPatch("putespeciehabitat")]
+        public async Task<IActionResult> PutEspecieHabitat(AssignEspecieHabitat asiganrEspeciehabitat) {
+            MAssignEspecieHabitat mAssignEspecieHabitat = new MAssignEspecieHabitat();
+            return Ok(mAssignEspecieHabitat.EditAsignacionHabitat(asiganrEspeciehabitat));
+        }
+
+        // Eliminar una especie asignada a un habiatat
+        [HttpDelete("deleteespeciehabitat/{id}")]
+        public async Task<IActionResult> DeleteEspecieHabitat(int id) {
+            MAssignEspecieHabitat mAssignEspecieHabitat = new MAssignEspecieHabitat();
+            return Ok(mAssignEspecieHabitat.DeleteAsignacion(id));
+        }
+
+/* ======================================================================== // ================================================================= */
+       
         // Agregar itinerario
         [HttpPost("additinerario")]
         public async Task<IActionResult> AddItinerario(Itinerario itinerario)
         {
             MItinerario mItinerario = new MItinerario();
             return Ok(mItinerario.AddItinerario(itinerario));
+        }
+
+        // Listar Los itinerarios
+        [HttpGet("getitinerarios")]
+        public async Task<IActionResult> GetItinerarios() {
+            MItinerario mItinerario = new MItinerario();
+            return Ok(mItinerario.GetItinerarios());
+        }
+
+        // Listar un registro de itinerario
+        [HttpGet("getitinerario/{id}")]
+        public async Task<IActionResult> GetItinerario(int id) {
+            MItinerario mItinerario = new MItinerario();
+            return Ok(mItinerario.GetItinerario(id));
+        }
+
+        // Editar un itinerario
+        [HttpPatch("putitinerario")]
+        public async Task<IActionResult> PutItinerario(Itinerario itinerario) {
+            MItinerario mItinerario = new MItinerario();
+            return Ok(mItinerario.UpdateItinerario(itinerario));
+        }
+
+        // Eliminar una especie asignada a un habiatat
+        [HttpDelete("deleteitinerario/{id}")]
+        public async Task<IActionResult> DeleteItinerario(int id) {
+            MItinerario mItinerario = new MItinerario();
+            return Ok(mItinerario.DeleteItinerario(id));
         }
 
 /* ======================================================================== // ================================================================= */

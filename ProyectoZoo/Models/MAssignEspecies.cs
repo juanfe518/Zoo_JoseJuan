@@ -21,14 +21,14 @@ namespace Zoo.Models
         }
 
         public RespuestaDTO GetEspeciesEmpleados() {
-            string query = "SELECT ESPEMP.\"Id_Especie\", ESP.\"Nombre_Espanol\", ESPEMP.\"Id_Empleado\", EMP.\"Nombre\" FROM public.\"Especies_Empleados\" ESPEMP LEFT OUTER JOIN public.\"Especies\" ESP ON ESP.\"Id_Especie\" = ESPEMP.\"Id_Especie\" LEFT OUTER JOIN public.\"Empleado\" EMP ON EMP.\"Id_Empleado\" = ESPEMP.\"Id_Empleado\";";
+            string query = "SELECT ESPEMP.\"Id_Especie_Empleado\", ESPEMP.\"Id_Especie\", ESP.\"Nombre_Espanol\", ESPEMP.\"Id_Empleado\", EMP.\"Nombre\" FROM public.\"Especies_Empleados\" ESPEMP LEFT OUTER JOIN public.\"Especies\" ESP ON ESP.\"Id_Especie\" = ESPEMP.\"Id_Especie\" LEFT OUTER JOIN public.\"Empleado\" EMP ON EMP.\"Id_Empleado\" = ESPEMP.\"Id_Empleado\";";
             MData data = new MData();
             RespuestaDTO responseBD = data.execute(query);
             return responseBD;
         }
 
         public RespuestaDTO GetEspecieEmpleado(int id) {
-            string query = "SELECT ESPEMP.\"Id_Especie\", ESP.\"Nombre_Espanol\", ESPEMP.\"Id_Empleado\", EMP.\"Nombre\" FROM public.\"Especies_Empleados\" ESPEMP LEFT OUTER JOIN public.\"Especies\" ESP ON ESP.\"Id_Especie\" = ESPEMP.\"Id_Especie\" LEFT OUTER JOIN public.\"Empleado\" EMP ON EMP.\"Id_Empleado\" = ESPEMP.\"Id_Empleado\" WHERE \"Id_Especie_Empleado\" = '"+ id +"';";
+            string query = "SELECT ESPEMP.\"Id_Especie_Empleado\", ESPEMP.\"Id_Especie\", ESP.\"Nombre_Espanol\", ESPEMP.\"Id_Empleado\", EMP.\"Nombre\" FROM public.\"Especies_Empleados\" ESPEMP LEFT OUTER JOIN public.\"Especies\" ESP ON ESP.\"Id_Especie\" = ESPEMP.\"Id_Especie\" LEFT OUTER JOIN public.\"Empleado\" EMP ON EMP.\"Id_Empleado\" = ESPEMP.\"Id_Empleado\" WHERE \"Id_Especie_Empleado\" = '"+ id +"';";
             MData data = new MData();
             RespuestaDTO responseBD = data.execute(query);
             return responseBD;

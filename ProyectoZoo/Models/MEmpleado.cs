@@ -27,7 +27,7 @@ namespace Zoo.Models
             return responseBD;
         } 
 
-        public RespuestaDTO GetEmpleado(string id) {
+        public RespuestaDTO GetEmpleado(int id) {
             string query = "SELECT \"Id_Empleado\", \"Nombre\", \"Direccion\", \"Telefono\", \"Fecha_Ingreso\", \"Id_Tipo_Empleado\", TEMPL.\"Nombre_Tipo\" FROM public.\"Empleado\" EMP INNER JOIN public.\"Tipo_Empleado\" TEMPL ON TEMPL.\"id_Tipo_Empleado\" = EMP.\"Id_Tipo_Empleado\" WHERE EMP.\"Id_Empleado\" = '"+ id +"';";
             MData data = new MData();
             RespuestaDTO responseBD = data.execute(query);
