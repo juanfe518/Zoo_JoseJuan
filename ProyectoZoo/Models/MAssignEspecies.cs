@@ -27,11 +27,27 @@ namespace Zoo.Models
             return responseBD;
         }
 
-        public RespuestaDTO GetEspecieEmpleado(string id) {
+        public RespuestaDTO GetEspecieEmpleado(int id) {
             string query = "SELECT ESPEMP.\"Id_Especie\", ESP.\"Nombre_Espanol\", ESPEMP.\"Id_Empleado\", EMP.\"Nombre\" FROM public.\"Especies_Empleados\" ESPEMP LEFT OUTER JOIN public.\"Especies\" ESP ON ESP.\"Id_Especie\" = ESPEMP.\"Id_Especie\" LEFT OUTER JOIN public.\"Empleado\" EMP ON EMP.\"Id_Empleado\" = ESPEMP.\"Id_Empleado\" WHERE \"Id_Especie_Empleado\" = '"+ id +"';";
             MData data = new MData();
             RespuestaDTO responseBD = data.execute(query);
             return responseBD;
+        }
+
+        public RespuestaDTO EditAsignacion(AssignEspecies editarEspecie) {
+
+            String queryUpdate = "UPDATE public.\"Especies_Empleados\" SET \"Id_Especie\" = '"+ editarEspecie.Id_Especie +"', \"Id_Empleado\" = '" + editarEspecie.Id_Especie + "' WHERE \"Id_Especie_Empleado\" = '" + editarEspecie.Id_Especie_Empleado + "';";
+            MData data = new MData();     
+            RespuestaDTO responseBD = data.execute(queryUpdate);  
+            return new RespuestaDTO (true, JsonConvert.SerializeObject(editarEspecie), ""); 
+        }
+
+        public RespuestaDTO DeleteAsignacion(int id) {
+
+            String queryDelete = "DELETE FROM public.\"Especies_Empleados\" WHERE \"Id_Especie_Empleado\" = '"+id+"';";
+            MData data = new MData();     
+            RespuestaDTO responseBD = data.execute(queryDelete);  
+            return new RespuestaDTO (true, "", ""); 
         }
     }
 }

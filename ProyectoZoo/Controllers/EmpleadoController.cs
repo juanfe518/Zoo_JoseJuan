@@ -19,6 +19,13 @@ namespace Zoo.Controllers
             return Ok(mTipoEmpleado.AddTipoEmpleado(tipoEmpleado));
         }
 
+        // Listar tipo empleados
+        [HttpGet("gettipoempleados")]
+        public async Task<IActionResult> GetTipoEmpleados() {
+            MTipoEmpleado mTipoEmpleado = new MTipoEmpleado();
+            return Ok(mTipoEmpleado.GetTiposEmpleados());
+        }
+
 /* ======================================================================== // ================================================================= */
 
         //Agregar empleado
@@ -76,9 +83,23 @@ namespace Zoo.Controllers
 
         // Listar una especie asignado a un empleado
         [HttpGet("getespecieempleado/{id}")]
-        public async Task<IActionResult> GetEspecieEmpelado(string id) {
+        public async Task<IActionResult> GetEspecieEmpelado(int id) {
             MAssignEspecies mAssignEspecies = new MAssignEspecies();
             return Ok(mAssignEspecies.GetEspecieEmpleado(id));
+        }
+
+        // Editar una especie asignado a un empleado
+        [HttpPatch("putespecieempleado")]
+        public async Task<IActionResult> PutEspecieEmpelado(AssignEspecies editarEspecie) {
+            MAssignEspecies mAssignEspecies = new MAssignEspecies();
+            return Ok(mAssignEspecies.EditAsignacion(editarEspecie));
+        }
+
+        // Eliminar una especie asignado a un empleado
+        [HttpDelete("deleteespecieempleado/{id}")]
+        public async Task<IActionResult> DeleteEspecieEmpelado(int id) {
+            MAssignEspecies mAssignEspecies = new MAssignEspecies();
+            return Ok(mAssignEspecies.DeleteAsignacion(id));
         }
 
 

@@ -25,7 +25,6 @@ namespace Zoo.Models
             MData data = new MData();
             RespuestaDTO responseBD = data.execute(queryGet);
             return responseBD;
-
         } 
 
         public RespuestaDTO GetEmpleado(string id) {
