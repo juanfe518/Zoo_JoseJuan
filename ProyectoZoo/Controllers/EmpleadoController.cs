@@ -26,6 +26,31 @@ namespace Zoo.Controllers
             return Ok(mTipoEmpleado.GetTiposEmpleados());
         }
 
+        // Listar un tipo empleado
+        [HttpGet("gettipoempleado/{id}")]
+        public async Task<IActionResult> GetTipoEmpleado(int id_Tipo_Empleado)
+        {
+            MTipoEmpleado mTipoEmpleado = new MTipoEmpleado();
+            return Ok(mTipoEmpleado.GetTipoEmpleado(id_Tipo_Empleado));
+        }
+
+        // Actualizar un tipo empleado
+        [HttpPatch("updatetipoempleado")]
+        public async Task<IActionResult> UpdateTipoEmpleado(TipoEmpleado tipoempleado)
+        {
+            MTipoEmpleado mTipoEmpleado = new MTipoEmpleado();
+            return Ok(mTipoEmpleado.UpdateTipoEmpleado(tipoempleado));
+        }
+
+        // Eliminar un tipo empleado
+        [HttpDelete("deletetipoempleado/{id}")]
+        public async Task<IActionResult> DeleteTipoEmpleado(int id_Tipo_Empleado)
+        {
+            MTipoEmpleado mTipoEmpleado = new MTipoEmpleado();
+            return Ok(mTipoEmpleado.DeleteTipoEmpleado(id_Tipo_Empleado));
+        }
+
+
 /* ======================================================================== // ================================================================= */
 
         //Agregar empleado
@@ -227,6 +252,39 @@ namespace Zoo.Controllers
             return Ok(mZona.AddZona(zona));
         }
 
+        // Listar Zonas
+        [HttpGet("getzonas")]
+        public async Task<IActionResult> GetZonas()
+        {
+            MZona mZona = new MZona();
+            return Ok(mZona.GetZonas());
+        }
+
+        // Listar una Zona
+        [HttpGet("getzona/{id_Zona}")]
+        public async Task<IActionResult> GetZona(string id_Zona)
+        {
+            MZona mZona = new MZona();
+            return Ok(mZona.GetZona(id_Zona));
+        }
+
+        // Actualizar Zona
+        [HttpPatch("updatezona")]
+        public async Task<IActionResult> UpdateZona(Zonas zona)
+        {
+            MZona mZona = new MZona();
+            return Ok(mZona.UpdateZona(zona));
+        }
+
+        // Eliminar Zona
+        [HttpDelete("deletezona/{id_Zona}")]
+        public async Task<IActionResult> DeleteZona(int id_Zona)
+        {
+            MZona mZona = new MZona();
+            return Ok(mZona.DeleteZona(id_Zona));
+        }
+
+
 /* ======================================================================== // ================================================================= */
         // Agregar tipo vegetación
         [HttpPost("addtipovegetacion")]
@@ -236,6 +294,37 @@ namespace Zoo.Controllers
             return Ok(mTipoVegetacion.AddTipoVegetacion(tipoVegetacion));
         }
 
+        // Listar tipos vegetación
+        [HttpGet("gettiposvegetacion")]
+        public async Task<IActionResult> GetTiposVegetacion()
+        {
+            MTipoVegetacion mTipoVegetacion = new MTipoVegetacion();
+            return Ok(mTipoVegetacion.GetTiposVegetacion());
+        }
+        // Listar un tipo vegetacion
+        [HttpGet("gettipovegetacion/{id}")]
+        public async Task<IActionResult> GetTipoVegetacion(int id_Tipo_Empleado)
+        {
+            MTipoVegetacion mTipoVegetacion = new MTipoVegetacion();
+            return Ok(mTipoVegetacion.GetTipoVegetacion(id_Tipo_Empleado));
+        }
+
+        // Actualizar un tipo vegetacion
+        [HttpPatch("updatetipovegetacion")]
+        public async Task<IActionResult> UpdateTipoVegetacion(TiposVegetacion tipoVegetacion)
+        {
+            MTipoVegetacion mTipoVegetacion = new MTipoVegetacion();
+            return Ok(mTipoVegetacion.UpdateTipoVegetacion(tipoVegetacion));
+        }
+
+        // Eliminar un tipo vegetacion
+        [HttpDelete("deletetipovegetacion/{id}")]
+        public async Task<IActionResult> DeleteTipoVegetacion(int id_Tipo_Vegetacion)
+        {
+            MTipoVegetacion mTipoVegetacion = new MTipoVegetacion();
+            return Ok(mTipoVegetacion.DeleteTipoVegetacion(id_Tipo_Vegetacion));
+        }
+
 /* ======================================================================== // ================================================================= */
         // Agregar habitat
         [HttpPost("addhabitat")]
@@ -243,6 +332,38 @@ namespace Zoo.Controllers
         {
             MHabitats mHabitat = new MHabitats();
             return Ok(mHabitat.AddHabitat(habitat));
+        }
+
+         // Listar habitats
+        [HttpGet("gethabitats")]
+        public async Task<IActionResult> GetHabitats()
+        {
+            MHabitats mHabitat = new MHabitats();
+            return Ok(mHabitat.GetHabitats());
+        }
+
+        // Listar un habitat
+        [HttpGet("gethabitat/{id_Habitat}}")]
+        public async Task<IActionResult> GetHabitat(int id_Habitat)
+        {
+            MHabitats MHabitats = new MHabitats();
+            return Ok(MHabitats.GetHabitat(id_Habitat));
+        }
+
+        // Actualizar Habitat
+        [HttpPatch("updatehabitat")]
+        public async Task<IActionResult> UpdateHabitat(Habitats habitat)
+        {
+            MHabitats MHabitats = new MHabitats();
+            return Ok(MHabitats.UpdateHabitat(habitat));
+        }
+
+        // Eliminar habitat
+        [HttpDelete("deletehabitat/{id_Habitat}")]
+        public async Task<IActionResult> DeleteHabitat(int id_Habitat)
+        {
+            MHabitats MHabitats = new MHabitats();
+            return Ok(MHabitats.DeleteHabitat(id_Habitat));
         }
 
 

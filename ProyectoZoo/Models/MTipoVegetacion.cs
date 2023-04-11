@@ -19,5 +19,38 @@ namespace Zoo.Models
 
             return new RespuestaDTO(true, JsonConvert.SerializeObject(tipoVegetacion), "");
         }
+
+         public RespuestaDTO GetTiposVegetacion()
+        {
+            String queryGet = "SELECT * FROM public.\"Tipo_Vegetacion\";";
+            MData data = new MData();
+            RespuestaDTO responseBD = data.execute(queryGet);
+            return responseBD;
+        }
+        public RespuestaDTO GetTipoVegetacion(int id_Tipo_Vegetacion)
+        {
+            string query = "SELECT \"Id_Tipo_Vegetacion\", \"Nombre\", \"Descripcion\", TEMPL.\"Nombre_Tipo\" FROM public.\"Empleado\" EMP INNER JOIN public.\"Tipo_Empleado\" TEMPL ON TEMPL.\"id_Tipo_Empleado\" = EMP.\"Id_Tipo_Empleado\" WHERE EMP.\"Id_Empleado\" = '" + id_Tipo_Vegetacion + "';";
+            MData data = new MData();
+            RespuestaDTO responseBD = data.execute(query);
+            return responseBD;
+        }
+
+        public RespuestaDTO UpdateTipoVegetacion(TiposVegetacion tipoVegetacion)
+        {
+
+            String queryUpdate = "UPDATE public.\"TipoVegetacion\" SET \"Nombre_Vegetacion\" = '" + tipoVegetacion._Nombre_Vegetacion + "',\"Descripcion\" = '" + tipoVegetacion._Descripcion + "';";
+            MData data = new MData();
+            RespuestaDTO responseBD = data.execute(queryUpdate);
+            return new RespuestaDTO(true, JsonConvert.SerializeObject(tipoVegetacion), "");
+        }
+
+        public RespuestaDTO DeleteTipoVegetacion(int id_Tipo_Vegetacion)
+        {
+
+            String queryDelete = "DELETE FROM public.\"TipoVegtacion\" WHERE \"Id_TipoEmpleado\" = '" + id_Tipo_Vegetacion + "';";
+            MData data = new MData();
+            RespuestaDTO responseBD = data.execute(queryDelete);
+            return new RespuestaDTO(true, "", "");
+        }
     }
 }
