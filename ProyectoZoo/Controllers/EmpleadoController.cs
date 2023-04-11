@@ -343,7 +343,7 @@ namespace Zoo.Controllers
         }
 
         // Listar un habitat
-        [HttpGet("gethabitat/{id_Habitat}}")]
+        [HttpGet("gethabitat/{id_Habitat}")]
         public async Task<IActionResult> GetHabitat(int id_Habitat)
         {
             MHabitats MHabitats = new MHabitats();
