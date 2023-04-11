@@ -187,4 +187,17 @@ public class UnitTest1
 
         //Assert.Equal("texto", Id_Tipo_Empleado);
     }
+    // Test para crear una zona 
+    [Fact]
+    public void AddZona()
+    {
+        Zonas zona = new Zonas(null, "Este", 100);
+        MZona mZona = new MZona();
+        RespuestaDTO respuesta = mZona.AddZona(zona);
+        Assert.Equal(true, respuesta.respuesta);
+
+    }
+
+
+
 }

@@ -6,13 +6,13 @@ namespace Zoo.Models
 {
     public class MTipoVegetacion
     {
-        public MTipoVegetacion(){}
+        public MTipoVegetacion() { }
 
         public RespuestaDTO AddTipoVegetacion(TiposVegetacion tipoVegetacion)
         {
-            String queryInsert = "INSERT INTO public.\"Tipo_Vegetacion\"(\"Nombre\", \"Descripcion\") VALUES ('"+ tipoVegetacion._Nombre_Vegetacion +"', '"+ tipoVegetacion._Descripcion +"') returning \"Id_Tipo_Vegetacion\";";
-            MData data = new MData();     
-            RespuestaDTO responseBD = data.execute(queryInsert);  
+            String queryInsert = "INSERT INTO public.\"Tipo_Vegetacion\"(\"Nombre\", \"Descripcion\") VALUES ('" + tipoVegetacion._Nombre_Vegetacion + "', '" + tipoVegetacion._Descripcion + "') returning \"Id_Tipo_Vegetacion\";";
+            MData data = new MData();
+            RespuestaDTO responseBD = data.execute(queryInsert);
             JArray array = JArray.Parse(responseBD.data);
             JObject tipoV = JObject.Parse(Convert.ToString(array[0]));
             //tipoVegetacion._Id_Tipo_Vegetacion = Convert.ToString(tipoV["Id_Tipo_Vegetacion"]);
@@ -20,7 +20,7 @@ namespace Zoo.Models
             return new RespuestaDTO(true, JsonConvert.SerializeObject(tipoVegetacion), "");
         }
 
-         public RespuestaDTO GetTiposVegetacion()
+        public RespuestaDTO GetTiposVegetacion()
         {
             String queryGet = "SELECT * FROM public.\"Tipo_Vegetacion\";";
             MData data = new MData();
@@ -29,7 +29,7 @@ namespace Zoo.Models
         }
         public RespuestaDTO GetTipoVegetacion(int id_Tipo_Vegetacion)
         {
-            string query = "SELECT \"Id_Tipo_Vegetacion\", \"Nombre\", \"Descripcion\", TEMPL.\"Nombre_Tipo\" FROM public.\"Empleado\" EMP INNER JOIN public.\"Tipo_Empleado\" TEMPL ON TEMPL.\"id_Tipo_Empleado\" = EMP.\"Id_Tipo_Empleado\" WHERE EMP.\"Id_Empleado\" = '" + id_Tipo_Vegetacion + "';";
+            string query = "SELECT \"Id_Tipo_Vegetacion\", \"Nombre\", \"Descripcion\" FROM public.\"Tipo_Vegetacion\" WHERE \"Id_Tipo_Vegetacion\" = '" + id_Tipo_Vegetacion + "';";
             MData data = new MData();
             RespuestaDTO responseBD = data.execute(query);
             return responseBD;
