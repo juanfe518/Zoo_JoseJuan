@@ -199,40 +199,41 @@ public class UnitTest1
     }
     // Test para crear un tipo de empleado pero enviandole un tipo de empleado que no existe
     [Fact]
-    public void AddTipoEmpleadoFail()
+    public void AddTipoVegetacion()
     {
-        TipoEmpleado tipoEmpleado = new TipoEmpleado(null, "Tipo de empleado de prueba");
-        MTipoEmpleado mTipoEmpleado = new MTipoEmpleado();
-        RespuestaDTO respuesta = mTipoEmpleado.AddTipoEmpleado(tipoEmpleado);
+        TiposVegetacion tiposVegetacion = new TiposVegetacion(null, "Tipo de prueba", "Descripcion");
+        MTipoVegetacion mTipoVegetacion = new MTipoVegetacion();
+        RespuestaDTO respuesta = mTipoVegetacion.AddTipoVegetacion(tiposVegetacion);
         Assert.Equal(true, respuesta.respuesta);
 
     }
 
     // Test para obtener un unico registro de empleado
     [Fact]
-    public void GetEmpleadoFail()
+    public void DeleteEmpleado()
     {
         MEmpleado mEmpleado = new MEmpleado();
-        RespuestaDTO respuesta = mEmpleado.GetEmpleado(50);
+        RespuestaDTO respuesta = mEmpleado.DeleteEmpleado(6);
         Assert.Equal(true, respuesta.respuesta);
     }
 
+    // Test para crear un tipo de empleado pero enviandole un tipo de empleado que no existe
+    [Fact]
+    public void AddItinerario()
+    {
+        Itinerario itinerario = new Itinerario(null, "67867G", "02:00:00", "03:00:00", 1, 15, 2);
+        MItinerario mItinerario = new MItinerario();
+        RespuestaDTO respuesta = mItinerario.AddItinerario(itinerario);
+        Assert.Equal(true, respuesta.respuesta);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    }
+    // Test para obtener un unico registro de itinerarios
+    [Fact]
+    public void GetItinerario()
+    {
+        MItinerario mItinerario = new MItinerario();
+        RespuestaDTO respuesta = mItinerario.GetItinerario(1);
+        Assert.Equal(true, respuesta.respuesta);
+    }
 
 }
