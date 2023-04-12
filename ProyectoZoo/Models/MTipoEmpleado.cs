@@ -29,7 +29,7 @@ namespace Zoo.Models
         }
         public RespuestaDTO GetTipoEmpleado(int id_Tipo_Empleado)
         {
-            string query = "SELECT \"Id_Empleado\", \"Nombre\", \"Direccion\", \"Telefono\", \"Fecha_Ingreso\", \"Id_Tipo_Empleado\", TEMPL.\"Nombre_Tipo\" FROM public.\"Empleado\" EMP INNER JOIN public.\"Tipo_Empleado\" TEMPL ON TEMPL.\"id_Tipo_Empleado\" = EMP.\"Id_Tipo_Empleado\" WHERE EMP.\"Id_Empleado\" = '" + id_Tipo_Empleado + "';";
+            string query = "SELECT \"Id_Tipo_Vegetacion\", \"Nombre\", \"Descripcion\" FROM public.\"Tipo_Vegetacion\" where \"Id_Tipo_Vegetacion\" = '" + id_Tipo_Empleado + "';";
             MData data = new MData();
             RespuestaDTO responseBD = data.execute(query);
             return responseBD;

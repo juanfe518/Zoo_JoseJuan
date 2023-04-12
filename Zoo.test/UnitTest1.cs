@@ -191,12 +191,47 @@ public class UnitTest1
     [Fact]
     public void AddZona()
     {
-        Zonas zona = new Zonas(null, "Este", 100);
+        Zonas zona = new Zonas();
         MZona mZona = new MZona();
         RespuestaDTO respuesta = mZona.AddZona(zona);
         Assert.Equal(true, respuesta.respuesta);
 
     }
+    // Test para crear un tipo de empleado pero enviandole un tipo de empleado que no existe
+    [Fact]
+    public void AddTipoEmpleadoFail()
+    {
+        TipoEmpleado tipoEmpleado = new TipoEmpleado(null, "Tipo de empleado de prueba");
+        MTipoEmpleado mTipoEmpleado = new MTipoEmpleado();
+        RespuestaDTO respuesta = mTipoEmpleado.AddTipoEmpleado(tipoEmpleado);
+        Assert.Equal(true, respuesta.respuesta);
+
+    }
+
+    // Test para obtener un unico registro de empleado
+    [Fact]
+    public void GetEmpleadoFail()
+    {
+        MEmpleado mEmpleado = new MEmpleado();
+        RespuestaDTO respuesta = mEmpleado.GetEmpleado(50);
+        Assert.Equal(true, respuesta.respuesta);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -47,7 +47,7 @@ namespace Zoo.Models
         public RespuestaDTO DeleteTipoVegetacion(int id_Tipo_Vegetacion)
         {
 
-            String queryDelete = "DELETE FROM public.\"TipoVegtacion\" WHERE \"Id_TipoEmpleado\" = '" + id_Tipo_Vegetacion + "';";
+            String queryDelete = "DELETE FROM public.\"TipoVegtacion\" WHERE \"Id_Tipo_Vegetacion\" = '" + id_Tipo_Vegetacion + "';";
             MData data = new MData();
             RespuestaDTO responseBD = data.execute(queryDelete);
             return new RespuestaDTO(true, "", "");
